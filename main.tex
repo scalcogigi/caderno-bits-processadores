@@ -1,0 +1,190 @@
+\documentclass[12pt,a4paper]{article}
+
+\input{preambulo}
+
+% ====================
+% Pacotes
+% ====================
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tocloft}
+
+% ====================
+% Cores
+% ====================
+\definecolor{roxoclaro}{RGB}{150,90,180}
+\definecolor{cinza}{RGB}{90,90,90}
+\definecolor{amareloclaro}{RGB}{240,200,90}
+
+% ====================
+% Profundidade do sumário
+% ====================
+\setcounter{tocdepth}{2}
+
+% ====================
+% Estilo dos títulos
+% ====================
+\titleformat{\section}
+  {\color{roxoclaro}\Large\bfseries}
+  {}
+  {0pt}
+  {}
+
+\titleformat{\subsection}
+  {\color{roxoclaro}\large\bfseries}
+  {}
+  {0pt}
+  {}
+
+% ====================
+% Estilo do sumário
+% ====================
+\renewcommand{\cftsecfont}{\color{roxoclaro}\bfseries}
+\renewcommand{\cftsubsecfont}{\color{cinza}}
+\renewcommand{\cftsecpagefont}{\color{cinza}}
+\renewcommand{\cftsubsecpagefont}{\color{cinza}}
+
+% ====================
+% Capa
+% ====================
+\title{
+\vspace{-1.5cm}
+{\Huge\bfseries Caderno de Exercícios}\\[0.4cm]
+{\Large\color{roxoclaro}Bits e Processadores}\\[0.6cm]
+\color{roxoclaro}\rule{0.6\linewidth}{0.8pt}
+}
+
+\author{
+{\large\color{cinza}Professor: Rafael Corsi Ferrão}\\[0.2cm]
+{\large\color{cinza}Ninja: Giovanna Barros Scalco}
+}
+
+\date{{\color{cinza}2025}}
+
+% ====================
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\vspace{1cm}
+
+% ====================
+% Apresentação
+% ====================
+\begin{center}
+\begin{minipage}{0.85\linewidth}
+\setstretch{1.2}
+
+{\Large\color{roxoclaro}\bfseries Apresentação}
+
+\vspace{0.6cm}
+
+{\color{cinza}
+Este caderno reúne exercícios referentes aos conteúdos da disciplina
+\textbf{Bits e Processadores}. O material foi organizado de forma progressiva,
+com foco na construção do raciocínio lógico, na compreensão conceitual e
+na relação entre teoria e prática em sistemas digitais.
+
+\vspace{0.4cm}
+
+A proposta é que este caderno funcione como um espaço de estudo ativo:
+anotações, tentativas, erros e correções fazem parte do processo.
+Os exercícios foram pensados para incentivar a interpretação, a análise
+e a autonomia na resolução de problemas.
+
+\vspace{0.4cm}
+
+\textbf{Sugestão de uso:} tente resolver cada exercício antes de consultar
+o gabarito comentado ao final do material. O objetivo não é apenas chegar
+à resposta correta, mas compreender o caminho até ela.
+}
+
+\end{minipage}
+\end{center}
+
+\newpage
+
+% ====================
+% Sumário
+% ====================
+\tableofcontents
+
+\newpage
+
+% ====================
+% Exercícios
+% ====================
+\section*{Exercícios}
+\addcontentsline{toc}{section}{Exercícios}
+
+\input{exercicios/algebra}
+\newpage
+\input{exercicios/dados}
+\newpage
+\input{exercicios/sincronos}
+\newpage
+\input{exercicios/aritmetica}
+\newpage
+\input{exercicios/cpu}
+\newpage
+\input{exercicios/maquina}
+
+\newpage
+
+% ====================
+% Gabarito
+% ====================
+\section*{Gabarito Comentado}
+\addcontentsline{toc}{section}{Gabarito Comentado}
+
+\addcontentsline{toc}{subsection}{Álgebra Booleana}
+\input{gabaritos/algebra}
+
+\addcontentsline{toc}{subsection}{Dados Digitais}
+\input{gabaritos/dados}
+
+\addcontentsline{toc}{subsection}{Sistemas Síncronos}
+\input{gabaritos/sincronos}
+
+\addcontentsline{toc}{subsection}{Aritmética Binária e Somadores}
+\input{gabaritos/aritmetica}
+
+\addcontentsline{toc}{subsection}{Arquitetura e CPU}
+\input{gabaritos/cpu}
+
+\addcontentsline{toc}{subsection}{Linguagem de Máquina}
+\input{gabaritos/maquina}
+
+\newpage
+
+% ====================
+% Materiais complementares
+% ====================
+\section*{Para continuar estudando}
+\addcontentsline{toc}{section}{Para continuar estudando}
+
+Os materiais abaixo foram indicados ao longo da disciplina ou utilizados como
+apoio para aprofundamento dos conceitos apresentados neste caderno.
+
+\subsection*{Livros}
+\begin{itemize}
+  \item NISAN, N.; SCHOCKEN, S. \textit{The Elements of Computing Systems}.
+  \item TOCCI, R.; WIDMER, N.; MOSS, G. \textit{Digital Systems}.
+  \item FLOYD, T. \textit{Digital Fundamentals}.
+\end{itemize}
+
+\subsection*{Vídeos}
+\begin{itemize}
+  \item Logic 101 — Truth Tables (YouTube)
+  \item Computer Science: Karnaugh Maps — Introduction
+  \item Coursera — Build a Computer from First Principles
+\end{itemize}
+
+\subsection*{Leitura complementar}
+\begin{itemize}
+  \item Don Lancaster — \textit{RTL Cookbook}
+  \item Artigos e materiais sobre a arquitetura Z01
+\end{itemize}
+
+\end{document}

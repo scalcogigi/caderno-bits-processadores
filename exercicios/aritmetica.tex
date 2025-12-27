@@ -1,0 +1,125 @@
+\section{Aritmética Binária e Somadores}
+\setcounter{exercicio}{0}
+
+\subsection{Complemento de Dois e Representação Numérica}
+
+\exercicio{Representação de números negativos em complemento de dois}
+
+Assuma vetores de 8 bits e codificação em complemento de dois.
+
+\begin{enumerate}
+  \item Escreva o valor em binário que representa $-5$.
+  \item Escreva o valor em binário que representa $-230$.
+  \item Qual valor está representado em binário? É positivo ou negativo? [10000011]
+\end{enumerate}
+Se algum valor não puder ser convertido, justifique.
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+
+\exercicio{Codificação ASCII}
+
+Assuma vetores de 8 bits.
+
+Escreva o valor em binário da letra \texttt{`G`} codificada em ASCII.
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+\subsection{Operações Aritméticas Binárias}
+
+\exercicio{Soma binária com complemento de dois}
+
+Faça a operação de soma binária a seguir e indique qual valor resulta
+em decimal.
+
+\[
+\begin{array}{c}
+10010111 \\
++ \\
+01100010
+\end{array}
+\]
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+
+\exercicio{Soma binária com overflow}
+
+Faça a operação de soma binária a seguir e indique qual valor resulta
+em decimal.
+
+\[
+\begin{array}{c}
+01111111 \\
++ \\
+01100010
+\end{array}
+\]
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+\subsection{Somadores}
+
+\exercicio{Implementação de um Half-Adder}
+
+Considere a tabela verdade a seguir:
+
+\[
+\begin{array}{c c|c c}
+a & b & soma & carry \\
+\hline
+0 & 0 & 0 & 0 \\
+0 & 1 & 1 & 0 \\
+1 & 0 & 1 & 0 \\
+1 & 1 & 0 & 1
+\end{array}
+\]
+
+Implemente um circuito Half-Adder utilizando portas lógicas.
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+
+\newpage
+\exercicio{Implementação de um Full-Adder}
+
+Considere a tabela verdade a seguir:
+
+\[
+\begin{array}{c c c|c c}
+a & b & c_{in} & soma & carry \\
+\hline
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 1 & 0 \\
+0 & 1 & 0 & 1 & 0 \\
+0 & 1 & 1 & 0 & 1 \\
+1 & 0 & 0 & 1 & 0 \\
+1 & 0 & 1 & 0 & 1 \\
+1 & 1 & 0 & 0 & 1 \\
+1 & 1 & 1 & 1 & 1
+\end{array}
+\]
+
+Implemente um circuito Full-Adder utilizando portas lógicas.
+
+\espacoresposta{5cm}
+
+% --------------------------------------------------
+
+\exercicio{Somador de 2 bits}
+
+Utilizando dois Full-Adders, implemente um circuito capaz de somar dois
+vetores de 2 bits:
+
+\[
+X[1:0] + Y[1:0] \rightarrow S[1:0]
+\]
+
+Indique também o sinal de \textit{carry} de saída.
+
+\newpage

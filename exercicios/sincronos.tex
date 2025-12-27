@@ -1,0 +1,111 @@
+\section{Sistemas Síncronos e Elementos de Memória}
+\setcounter{exercicio}{0}
+
+\subsection{Conceitos Fundamentais}
+
+\exercicio{Diferença entre circuitos síncronos e assíncronos}
+
+Explique qual é a diferença entre um circuito síncrono e um circuito
+assíncrono, destacando o papel do tempo, do sinal de clock e da
+sincronização dos sinais.
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+
+\exercicio{O papel do clock em um computador}
+
+Explique qual é o papel do sinal de clock em um computador e por que
+ele é fundamental para o funcionamento correto de sistemas digitais.
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+
+\exercicio{Latch versus Flip-Flop}
+
+Explique qual é a diferença entre um latch e um flip-flop (FF),
+considerando o comportamento em relação ao sinal de clock e o momento
+em que a saída é atualizada.
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+\subsection{Flip-Flop Tipo D}
+
+\exercicio{Funcionamento do Flip-Flop tipo D}
+
+Explique o que é um Flip-Flop do tipo D e descreva como ele funciona
+em relação às entradas de dados e ao sinal de clock.
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+
+\exercicio{Tabela verdade do Flip-Flop tipo D}
+
+Preencha a tabela verdade do Flip-Flop tipo D a seguir, considerando
+as entradas indicadas e o comportamento do sinal de clock.
+
+\[
+\begin{array}{c|c|c}
+\text{Clock} & D & Q(t+1) \\ \hline
+\uparrow & 0 & \\
+\uparrow & 1 & \\
+0/1 & X & Q(t)
+\end{array}
+\]
+
+\espacoresposta{3cm}
+
+
+% --------------------------------------------------
+\exercicio{Análise temporal do sinal de saída}
+
+Observe o diagrama de sinais apresentado a seguir (clock, D, preset e clear)
+e determine qual será o valor da saída $Q$ nos instantes A, B, C, D e E (cada linha pontilhada)
+
+\begin{center}
+\includegraphics[width=0.7\linewidth]{fotos/diagramaD.png}
+\end{center}
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+\subsection{Memória e Registradores}
+
+
+\exercicio{O que é um registrador}
+
+Explique o que é um registrador em um sistema digital e qual é a sua
+função dentro da arquitetura de um computador.
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+
+\exercicio{Sinal de endereço em uma memória}
+
+Explique para que serve o sinal de endereço em uma memória digital e
+como ele está relacionado à organização e ao acesso aos dados armazenados.
+
+\espacoresposta{3cm}
+
+\exercicio{Binary Digit (Bit) ao longo do tempo}
+
+Considere o Binary Digit apresentado na tabela a seguir e complete os campos
+em branco, indicando a evolução do valor armazenado ao longo do tempo,
+de acordo com os sinais de controle.
+
+\[
+\begin{array}{c|c|c}
+\text{Clock} & \text{Entrada} & \text{Bit armazenado} \\ \hline
+\uparrow & 0 & \\
+\uparrow & 1 & \\
+0/1 & X & \text{mantém valor}
+\end{array}
+\]
+
+\espacoresposta{3cm}
+
+\newpage

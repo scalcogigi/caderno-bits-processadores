@@ -1,0 +1,106 @@
+\section{Arquitetura, Execução e Debug da CPU}
+\setcounter{exercicio}{0}
+
+\subsection{Arquitetura da CPU}
+
+\exercicio{Extensão da arquitetura da CPU}
+
+Proponha uma modificação na CPU do Z01.1 que atenda aos seguintes requisitos:
+
+\begin{enumerate}
+  \item Adicionar um novo registrador \texttt{\%S}. Indique onde ele deve ser
+  inserido na arquitetura.
+  \item Modificar a linguagem de máquina do hardware para suportar esse novo
+  registrador. Descreva a solução proposta.
+  \item Possibilitar que o registrador \texttt{\%D} enderece a memória, permitindo
+  a instrução:
+  \[
+  \texttt{movw \%A, (\%D)}
+  \]
+  \item Possibilitar carregamento imediato em \texttt{\%D}, permitindo a instrução:
+  \[
+  \texttt{leaw \$5, \%D}
+  \]
+\end{enumerate}
+
+Para cada modificação, desenhe o diagrama da nova CPU.
+
+\espacoresposta{5cm}
+
+% --------------------------------------------------
+
+\exercicio{Instrução \texttt{nop}}
+
+Explique como a unidade de controle da CPU deve atuar para realizar a
+instrução \texttt{nop}, detalhando os sinais de controle envolvidos.
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+
+\exercicio{Execução simultânea de instruções}
+
+Analise se a CPU é capaz de executar, em um mesmo ciclo de clock,
+as instruções \texttt{movw \%D, \%A} e \texttt{jg \%D}. Justifique sua
+resposta com base na arquitetura da CPU, no caminho de dados
+(\textit{datapath}) e nos sinais de controle envolvidos.
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+
+\exercicio{Sinal \texttt{loadPC}}
+
+Explique quais sinais influenciam o carregamento do contador de programa
+(\texttt{PC}) e como esse sinal afeta o fluxo de execução do programa.
+
+\espacoresposta{3cm}
+
+% ==================================================
+\subsection{Execução e Debug da CPU}
+
+\exercicio{Análise de falha em execução de programa}
+
+Durante o desenvolvimento do projeto, o teste de integração
+\texttt{./testeAssemblyMyCpu.py} falhou. A simulação executa o seguinte
+programa:
+
+\begin{verbatim}
+leaw $0, %A
+movw (%A), %D
+leaw $1, %A
+movw (%A), %A
+addw %A, %D, (%A)
+\end{verbatim}
+
+A memória RAM inicial contém:
+
+\begin{center}
+\begin{tabular}{c c}
+\toprule
+Endereço & Dado \\
+\midrule
+0 & 0000000000000010 \\
+1 & 0000000001000010 \\
+3 & 0000000000000000 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Com base na forma de onda dos sinais da CPU, identifique qual falha está
+ocorrendo durante a execução do programa e explique o motivo.
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+
+\exercicio{Engenharia reversa de execução}
+
+Você foi chamado para realizar engenharia reversa em um programa executando
+no hardware do Z01. Na captura de dados, o sinal da instrução não foi obtido.
+
+A partir da análise da forma de onda dos sinais da CPU, determine quais são
+os \textbf{três comandos em assembly} que estão sendo executados no hardware
+nesse momento.
+
+\newpage

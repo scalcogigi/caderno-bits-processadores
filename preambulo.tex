@@ -1,0 +1,39 @@
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{circuits.logic.US, positioning, arrows.meta}
+\usepackage{circuitikz}
+
+
+
+\geometry{margin=2cm}
+
+\definecolor{roxoclaro}{RGB}{150,90,180}
+
+
+\newcommand{\espacoresposta}[1]{%
+\vspace{#1}
+\noindent\textcolor{roxoclaro}{\rule{\linewidth}{0.6pt}}
+}
+
+\newcounter{exercicio}
+
+\newcommand{\exercicio}[1]{%
+  \refstepcounter{exercicio}%
+  \subsubsection*{Exercício \theexercicio\ --- #1}%
+}
+
+
+\newcommand{\gabaritoex}[1]{%
+\subsection*{Exercício #1}
+}

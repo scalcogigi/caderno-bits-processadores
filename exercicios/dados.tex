@@ -1,0 +1,296 @@
+\section{Dados Digitais}
+\setcounter{exercicio}{0}
+\subsection{Representação de Dados e Memória}
+
+\exercicio{Memória ROM — interpretação de dados}
+
+Dois alunos empreendendo uso de engenharia reversa (para obter uma senha que
+está gravada na memória) obtiveram uma série de “fotografias” da memória ROM
+em um processador de 8 bits. Aplicando o conhecimento que obtiveram em robótica,
+analisaram as imagens e extraíram a tabela a seguir, onde:
+\[
+\blacksquare = 1 \qquad \square = 0
+\]
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{fotos/quadrados.png}
+    \label{fig:placeholder}
+\end{figure}
+
+Ambos desejavam descobrir onde o programa armazena a senha de acesso (um número
+que o usuário digita). Analisando o código-fonte do programa, descobriram que a
+senha é armazenada no endereço \texttt{0x0C} da memória.
+
+\textbf{Pergunta:} qual é o valor armazenado nesse endereço?
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+
+\exercicio{Comunicação serial — decodificação ASCII}
+
+Você está debugando uma comunicação serial entre dois equipamentos e foi capaz
+de capturar a seguinte sequência de dados, representada na forma de onda abaixo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{fotos/mensagem.png}
+    \label{fig:placeholder}
+\end{figure}
+
+Sabendo que a mensagem transmitida está codificada em ASCII:
+
+\textbf{Pergunta:} qual foi a mensagem enviada?
+
+\espacoresposta{3cm}
+
+
+% ==================================================
+\subsection{Displays de Sete Segmentos}
+
+\exercicio{Interpretação de sinais em display de 7 segmentos}
+
+O display de sete segmentos é um componente muito utilizado em sistemas
+eletrônicos para exibir dígitos numéricos:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{fotos/7seg.png}
+    \label{fig:placeholder}
+\end{figure}
+
+Por exemplo, para exibir o valor 7 é necessário acionar os segmentos
+\texttt{a}, \texttt{b} e \texttt{c}, resultando na codificação:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\linewidth]{fotos/sete.png}
+    \caption{http://www.uize.com/examples/seven-segment-display.html}
+    \label{fig:placeholder}
+\end{figure}
+
+Os segmentos normalmente formam um vetor do tipo g, f, e, d, c, b, a. O valor 7 seria codificado em: 0b0000111 -> 0x05
+
+Você está fazendo um projeto que possui um display de 7 segmentos, mas ele está
+queimado. Para descobrir quais valores estavam sendo enviados ao display, você
+conectou um analisador de sinais nas trilhas correspondentes e obteve a forma de
+onda apresentada.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{fotos/ondas.png}
+    \label{fig:placeholder}
+\end{figure}
+
+\textbf{Pergunta:} quais são os três valores (fachas) que estariam
+sendo exibidos no display?
+
+\espacoresposta{3cm}
+
+% ==================================================
+\subsection{Bases Numéricas e Codificações}
+
+\exercicio{Tamanho de palavras em sistemas digitais}
+
+Quantos bits possuem os seguintes tipos de dados?
+
+\begin{itemize}
+  \item nibble
+  \item byte
+  \item halfword
+  \item word
+\end{itemize}
+
+\espacoresposta{0,5cm}
+
+% --------------------------------------------------
+
+\exercicio{Conversão de decimal para binário}
+
+Converta os números decimais a seguir para binário, indicando a quantidade
+mínima de bits necessária para cada representação.
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Decimal} & \textbf{nº de bits} & \textbf{Binário} \\ \hline
+0   &  &  \\
+1   &  &  \\
+2   &  &  \\
+3   &  &  \\
+4   &  &  \\
+5   &  &  \\
+6   &  &  \\
+7   &  &  \\
+8   &  &  \\
+9   &  &  \\
+10  &  &  \\
+115 &  &  \\
+256 &  &  \\
+1027 & &  \\ \hline
+\end{tabular}
+\end{center}
+
+
+% --------------------------------------------------
+
+\exercicio{Conversão de binário para decimal}
+
+Converta os seguintes números binários para decimal.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Binário} & \textbf{Decimal} \\ \hline
+$0b0$      &  \\
+$0b100$    &  \\
+$0b10011$  &  \\
+$0b11111$  &  \\
+$0b01010$  &  \\ \hline
+\end{tabular}
+\end{center}
+
+
+% --------------------------------------------------
+
+\exercicio{Conversão de decimal para hexadecimal}
+
+Converta os seguintes números decimais para hexadecimal.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Decimal} & \textbf{Hexadecimal} \\ \hline
+0  &  \\
+1  &  \\
+2  &  \\
+3  &  \\
+4  &  \\
+5  &  \\
+6  &  \\
+7  &  \\
+8  &  \\
+9  &  \\
+10 &  \\
+11 &  \\
+12 &  \\
+13 &  \\
+14 &  \\
+15 &  \\
+16 &  \\
+17 &  \\
+18 &  \\ \hline
+\end{tabular}
+\end{center}
+
+
+% --------------------------------------------------
+
+\exercicio{Conversão de binário para hexadecimal}
+
+Converta os seguintes números binários para hexadecimal.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Binário} & \textbf{Hexadecimal} \\ \hline
+$0b11110$     &  \\
+$0b101$       &  \\
+$0b10100011$  &  \\
+$0b11010$     &  \\
+$0b00000$     &  \\ \hline
+\end{tabular}
+\end{center}
+
+
+% --------------------------------------------------
+
+\exercicio{Conversão de hexadecimal para decimal}
+
+Converta os seguintes números hexadecimais para decimal.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Hexadecimal} & \textbf{Decimal} \\ \hline
+$0x0003$ &  \\
+$0xA$    &  \\
+$0x55$   &  \\
+$0x0101$ &  \\ \hline
+\end{tabular}
+\end{center}
+
+
+% --------------------------------------------------
+
+\exercicio{Conversão de decimal para octal}
+
+Converta os seguintes números decimais para octal.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Decimal} & \textbf{Octal} \\ \hline
+0  &  \\
+1  &  \\
+2  &  \\
+3  &  \\
+4  &  \\
+5  &  \\
+6  &  \\
+7  &  \\
+8  &  \\
+9  &  \\
+10 &  \\
+11 &  \\
+12 &  \\
+13 &  \\
+14 &  \\
+15 &  \\
+16 &  \\
+17 &  \\ \hline
+\end{tabular}
+\end{center}
+
+
+% --------------------------------------------------
+
+\exercicio{Conversão de decimal para BCD}
+
+Converta os seguintes números decimais para BCD.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Decimal} & \textbf{BCD} \\ \hline
+50  &  \\
+1   &  \\
+103 &  \\
+904 &  \\
+4   &  \\
+5   &  \\ \hline
+\end{tabular}
+\end{center}
+
+
+% --------------------------------------------------
+
+\exercicio{Conversão de caracteres para ASCII}
+
+Faça a conversão dos seguintes caracteres para o código ASCII binário
+correspondente.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Caractere} & \textbf{ASCII (binário)} \\ \hline
+`1' &  \\
+`a' &  \\
+`A' &  \\
+`Z' &  \\
+`0' &  \\ \hline
+\end{tabular}
+\end{center}
+
+\newpage

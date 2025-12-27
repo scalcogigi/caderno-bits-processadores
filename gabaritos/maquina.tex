@@ -1,0 +1,52 @@
+\section*{Linguagem de Máquina}
+\setcounter{exercicio}{0}
+
+\gabaritoex{1}
+Apenas instruções compatíveis com a ISA do Z01 são suportadas.
+
+\gabaritoex{2}
+\begin{itemize}
+  \item leaw \$1, \%A — instrução A
+  \item movw \%D, \%A — instrução C
+  \item incw \%A — instrução C
+  \item jmp — instrução C
+\end{itemize}
+
+\gabaritoex{3}
+A instrução \texttt{leaw \$5, \%A} é traduzida como:
+\[
+000000000000000101
+\]
+
+\gabaritoex{4}
+A tradução correta é:
+\[
+1\;000\;0\;001100\;0\;001\;000
+\]
+
+\gabaritoex{5}
+A tradução correta é:
+\[
+1\;000\;0\;000000\;0\;010\;000
+\]
+
+\gabaritoex{6}
+A tradução correta é:
+\[
+1\;000\;0\;000000\;0\;011\;000
+\]
+
+\gabaritoex{7}
+A instrução \texttt{jmp} corresponde a:
+\[
+1\;000\;0\;010101\;0\;000\;111
+\]
+
+\gabaritoex{8}
+A instrução \texttt{jl} corresponde a:
+\[
+1\;000\;0\;001100\;0\;000\;100
+\]
+
+\gabaritoex{9}
+O código copia o valor das chaves \texttt{SW} para os LEDs.

@@ -1,0 +1,251 @@
+\section{Álgebra Booleana}
+\setcounter{exercicio}{0}
+
+\subsection{Portas Lógicas e Tabelas Verdade}
+
+\exercicio{Indique o nome e a operação booleana associada a cada elemento}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\linewidth]{fotos/portas_logicas.png}
+\end{figure}
+
+\espacoresposta{2cm}
+
+\exercicio{Identificação de portas lógicas a partir de tabelas verdade}
+
+\textbf{(a)} A tabela representa qual porta lógica?
+
+\[
+\begin{array}{|c|c|c|}
+\hline
+A & B & OUT\\ \hline
+0 & 0 & 0\\
+0 & 1 & 1\\
+1 & 0 & 1\\
+1 & 1 & 0\\ \hline
+\end{array}
+\]
+\textbf{(b)} A tabela representa qual porta lógica?
+
+\[
+\begin{array}{|c|c|c|}
+\hline
+A & B & OUT\\ \hline
+0 & 0 & 1\\
+0 & 1 & 1\\
+1 & 0 & 1\\
+1 & 1 & 0\\ \hline
+\end{array}
+\]
+
+\espacoresposta{3cm}
+
+\subsection{Propriedades da Álgebra Booleana}
+
+\exercicio{Aplicando a lei da distributividade}
+
+\[
+A(B+\overline{C}+D)
+\]
+
+\begin{enumerate}
+\item $AB + AC + AD$
+\item $ABCD$
+\item $A + B + C + D$
+\item $AB + A\overline{C} + AD$
+\end{enumerate}
+
+\espacoresposta{0.5cm}
+
+\exercicio{Aplicando o teorema de De Morgan}
+
+\[
+\overline{A + B + C}
+\]
+
+\begin{enumerate}
+\item $\overline{A} + \overline{B} + \overline{C}$
+\item $\overline{A+B+C}$
+\item $A + \overline{B} + C$
+\item $A(B+C)$
+\end{enumerate}
+
+\espacoresposta{0.5cm}
+
+\exercicio{Indique quais simplificações estão incorretas.}
+
+\begin{enumerate}
+  \item $\overline{(x + y)} = \overline{x} \cdot \overline{y} = x \cdot y$
+  \item $x(\overline{x} + y) = x \cdot \overline{x} + x \cdot y = 0 + x \cdot y = x \cdot y$
+  \item $x \cdot y + x(y + z) = x \cdot y + x \cdot y + z = x \cdot y + z$
+  \item $\overline{x} \cdot \overline{y} \cdot z + \overline{x} \cdot y \cdot z + x \cdot \overline{y}
+        = \overline{x} \cdot z(\overline{y} + y) + x \cdot \overline{y}
+        = \overline{x} \cdot z + x \cdot \overline{y}$
+\end{enumerate}
+
+
+\espacoresposta{0.5cm}
+
+\exercicio{Indique qual propriedade da álgebra booleana é falsa}
+
+\begin{enumerate}
+\item $A(\overline{A}+B)=AB$
+\item $A+(AB)=A$
+\item $A+A=A$
+\item $A\cdot A=A$
+\end{enumerate}
+
+\espacoresposta{0.5cm}
+
+\subsection{Formas Canônicas}
+
+\exercicio{Forma canônica Soma de Produtos}
+
+\[
+\begin{array}{|c|c|c|}
+\hline
+A & B & Q\\ \hline
+0 & 0 & 1\\
+0 & 1 & 0\\
+1 & 0 & 0\\
+1 & 1 & 1\\ \hline
+\end{array}
+\]
+
+\begin{enumerate}
+\item $\overline{A}\overline{B}+AB$
+\item $\overline{A}B+A\overline{B}$
+\item $\overline{A}\overline{B}+A\overline{B}$
+\item $\overline{A}B+AB$
+\end{enumerate}
+
+\espacoresposta{0.5cm}
+
+\exercicio{Dado a seguinte tabela verdade:}
+
+\[
+\begin{array}{cccc}
+A & B & C & Q\\ \hline
+0&0&0&1\\
+0&0&1&0\\
+0&1&0&0\\
+0&1&1&1\\
+1&0&0&1\\
+1&0&1&0\\
+1&1&0&0\\
+1&1&1&1
+\end{array}
+\]
+
+\begin{enumerate}
+\item Crie uma fórmula em álgebra booleana que represente a tabela via SoP e PoS.
+\item Simplifique a SoP.
+\item Desenhe o circuito correspondente.
+\end{enumerate}
+
+\espacoresposta{4cm}
+
+\exercicio{Contagem de saídas em uma expressão SoP}
+
+\[
+A\overline{BC} + \overline{A}BC + \overline{A}B\overline{C} +
+A\overline{B}\overline{C} + ABC
+\]
+
+\espacoresposta{0.5cm}
+
+\exercicio{Característica da forma canônica SoP}
+
+\begin{enumerate}
+\item Os circuitos lógicos são reduzidos a nada mais do que simples portas AND e OR
+\item Os tempos de atraso são muito reduzidas em relação a outras formas
+\item Nenhum sinal deve passar por mais de duas portas lógicas, não incluindo inversores
+\item O número máximo de portas que qualquer sinal deve passar é reduzido por um factor de dois
+\end{enumerate}
+
+\espacoresposta{0.5cm}
+
+\subsection{Mapas de Karnaugh}
+
+\exercicio{Simplifique a expressão lógica utilizando álgebra booleana}
+
+\[
+\overline{A}BC + \overline{A}BC + \overline{A}BC +
+ABC + ABC
+\]
+
+\espacoresposta{4cm}
+
+\exercicio{Determine a expressão lógica simplificada para os mapas de Karnaugh}
+
+\textbf{Mapa 1 (AB / C):}
+\[
+\begin{array}{c|cccc}
+AB\backslash C & 00 & 01 & 11 & 10\\ \midrule
+0 & 0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 1 & 1
+\end{array}
+\]
+
+\vspace{0.5em}
+
+\textbf{Mapa 2 (AB / C):}
+\[
+\begin{array}{c|cccc}
+AB\backslash C & 00 & 01 & 11 & 10\\ \midrule
+0 & 0 & 1 & 0 & 1 \\
+1 & 1 & 0 & 0 & 1
+\end{array}
+\]
+
+\vspace{0.5em}
+
+\textbf{Mapa 3 (AB / CD):}
+\[
+\begin{array}{c|cccc}
+AB\backslash CD & 00 & 01 & 11 & 10\\ \midrule
+00 & 1 & 0 & 0 & 1\\
+01 & 0 & 0 & 0 & 1\\
+11 & 0 & 0 & 0 & 0\\
+10 & 0 & 1 & 1 & 0
+\end{array}
+\]
+
+\vspace{0.5em}
+
+\textbf{Mapa 4 (AB / CD):}
+\[
+\begin{array}{c|cccc}
+AB\backslash CD & 00 & 01 & 11 & 10\\ \midrule
+00 & 1 & 0 & 1 & 1\\
+01 & 0 & 0 & 1 & 1\\
+11 & 0 & 0 & 1 & 1\\
+10 & 1 & 1 & 1 & 1
+\end{array}
+\]
+
+\espacoresposta{2cm}
+
+\exercicio{Utilize um mapa de Karnaugh para simplificar a expressão}
+
+\[
+ABC\overline{D} + \overline{A}\overline{B}CD +
+A\overline{B}\overline{C}D + \overline{A} + \overline{B} +
+\overline{C} + \overline{D}
+\]
+
+\espacoresposta{3cm}
+
+\exercicio{Conversão de Produto de Somas para Soma de Produtos}
+
+A seguinte expressão foi resultado da forma canônica do Produto de Somas
+de uma tabela verdade para a produção de um circuito lógico. Converta
+essa expressão para Soma de Produtos e minimize.
+
+\[
+(A+B+C)(A+B+\overline{C})(A+\overline{B}+C)
+(\overline{A}+B+C)(\overline{A}+\overline{B}+C)
+\]
+
+\newpage

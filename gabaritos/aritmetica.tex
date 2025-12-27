@@ -1,0 +1,178 @@
+\section*{Aritmética Binária e Somadores}
+\setcounter{exercicio}{0}
+
+\gabaritoex{1}
+\[
+-5=11111011
+\]
+O valor $-230$ não pode ser representado em 8 bits pois excede o intervalo
+$[-128,127]$.  
+O valor $10000011$ representa um número negativo.
+
+\gabaritoex{2}
+A letra \texttt{G} corresponde ao valor ASCII:
+\[
+01000111
+\]
+
+\gabaritoex{3}
+\[
+10010111+01100010=11111001=-7
+\]
+
+\gabaritoex{4}
+Ocorre overflow, pois dois números positivos geraram um resultado negativo.
+
+\gabaritoex{5}
+
+A partir da tabela verdade, observa-se que:
+
+\begin{itemize}
+  \item a saída \textbf{soma} é igual a 1 quando exatamente uma das entradas
+  é igual a 1, caracterizando a operação \textbf{XOR};
+  \item a saída \textbf{carry} é igual a 1 somente quando ambas as entradas
+  são iguais a 1, caracterizando a operação \textbf{AND}.
+\end{itemize}
+
+As expressões booleanas do Half-Adder são:
+\[
+\text{soma} = a \oplus b
+\qquad
+\text{carry} = a \cdot b
+\]
+
+\textbf{Circuito lógico do Half-Adder:}
+
+\begin{center}
+\begin{tikzpicture}[circuit logic US, scale=1, every circuit symbol/.style={scale=1}]
+
+% Entradas
+\node (a) at (0,1) {$a$};
+\node (b) at (0,0) {$b$};
+
+% Portas
+\node[xor gate, draw] (xor1) at (2,0.75) {};
+\node[and gate, draw] (and1) at (2,-0.75) {};
+
+% Saídas
+\node (soma)  at (4,0.75) {$\text{soma}$};
+\node (carry) at (4,-0.75) {$\text{carry}$};
+
+% Conexões
+\draw (a) -- (xor1.input 1);
+\draw (b) -- (xor1.input 2);
+\draw (xor1.output) -- (soma);
+
+\draw (a) |- (and1.input 1);
+\draw (b) |- (and1.input 2);
+\draw (and1.output) -- (carry);
+
+\end{tikzpicture}
+\end{center}
+
+
+\textit{O Half-Adder é o bloco básico dos somadores binários e serve como
+base para a construção do Full-Adder e de somadores multi-bit.}
+
+
+\gabaritoex{6}
+
+A partir da tabela verdade, o Full-Adder soma três bits de entrada
+($a$, $b$ e $c_{in}$), produzindo as saídas \textbf{soma} e \textbf{carry}.
+
+As expressões booleanas são:
+
+\[
+\text{soma} = a \oplus b \oplus c_{in}
+\]
+
+\[
+\text{carry} = (a \cdot b) + \bigl(c_{in} \cdot (a \oplus b)\bigr)
+\]
+
+\textbf{Circuito lógico do Full-Adder:}
+
+\begin{center}
+\begin{circuitikz}[scale=1]
+
+% Entradas
+\node (a) at (0,2) {$a$};
+\node (b) at (0,1) {$b$};
+\node (cin) at (0,0) {$c_{in}$};
+
+% XORs
+\draw (1.5,1.5) node[xor port] (xor1) {};
+\draw (3.5,1.5) node[xor port] (xor2) {};
+
+% ANDs
+\draw (1.5,0.5) node[and port] (and1) {};
+\draw (3.5,0.5) node[and port] (and2) {};
+
+% OR
+\draw (5.5,0.5) node[or port] (or1) {};
+
+% Conexões soma
+\draw (a) -- (xor1.in 1);
+\draw (b) -- (xor1.in 2);
+\draw (xor1.out) -- (xor2.in 1);
+\draw (cin) |- (xor2.in 2);
+\draw (xor2.out) -- ++(1,0) node[right]{soma};
+
+% Conexões carry
+\draw (a) |- (and1.in 1);
+\draw (b) |- (and1.in 2);
+\draw (cin) |- (and2.in 2);
+\draw (xor1.out) |- (and2.in 1);
+\draw (and1.out) -- (or1.in 1);
+\draw (and2.out) -- (or1.in 2);
+\draw (or1.out) -- ++(1,0) node[right]{carry};
+
+\end{circuitikz}
+\end{center}
+
+
+
+\textit{O Full-Adder pode ser visto como a combinação de dois Half-Adders
+e uma porta OR para o cálculo do carry.}
+
+
+\gabaritoex{7}
+
+O somador de 2 bits é construído utilizando dois Full-Adders conectados
+em cascata, permitindo a propagação do sinal de carry.
+
+\textbf{Circuito lógico do Somador de 2 bits:}
+
+\begin{center}
+\begin{tikzpicture}[scale=1, every node/.style={font=\small}]
+
+% Full-Adder do bit menos significativo
+\node[draw, minimum width=2.4cm, minimum height=1.2cm] (FA0) at (0,2) {FA};
+
+\node[left] at ($(FA0.west)+(0,0.4)$) {$X_0$};
+\node[left] at ($(FA0.west)+(0,0)$) {$Y_0$};
+\node[left] at ($(FA0.west)+(0,-0.4)$) {$c_0 = 0$};
+
+\node[right] at (FA0.east) {$S_0$};
+
+% Full-Adder do bit mais significativo
+\node[draw, minimum width=2.4cm, minimum height=1.2cm] (FA1) at (0,0) {FA};
+
+\node[left] at ($(FA1.west)+(0,0.3)$) {$X_1$};
+\node[left] at ($(FA1.west)+(0,-0.1)$) {$Y_1$};
+
+\node[right] at ($(FA1.east)+(0,0.3)$) {$S_1$};
+\node[right] at ($(FA1.east)+(0,-0.3)$) {$c_{out}$};
+
+% Carry entre os estágios
+\draw[->, thick] (FA0.south) -- node[right] {$c_1$} (FA1.north);
+
+\end{tikzpicture}
+\end{center}
+
+
+\textit{Esse tipo de somador é conhecido como \textbf{Ripple Carry Adder},
+pois o carry gerado em cada estágio se propaga para o próximo.}
+
+
+\newpage

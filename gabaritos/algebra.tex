@@ -1,0 +1,125 @@
+\section*{Álgebra Booleana}
+\setcounter{exercicio}{0}
+
+\gabaritoex{1}
+Portas lógicas correspondentes: AND, NAND, OR, NOR, NOT, XOR e XNOT.
+
+\gabaritoex{2}
+(a) A tabela representa a porta XOR, pois a saída é 1 quando exatamente uma das
+entradas é 1.  
+(b) A tabela representa a porta NAND, pois apenas quando ambas as entradas são 1
+a saída é 0.
+
+\gabaritoex{3}
+Aplicando a distributividade:
+\[
+A(B+\overline{C}+D)=AB+A\overline{C}+AD
+\]
+
+\gabaritoex{4}
+Pelo teorema de De Morgan:
+\[
+\overline{A+B+C}=\overline{A}\,\overline{B}\,\overline{C}
+\]
+
+\gabaritoex{5}
+As simplificações incorretas são aquelas que violam a distributividade ou a
+absorção, em especial quando fatores são omitidos durante a expansão. Nesse caso, as alternativas 1 e 3
+
+\gabaritoex{6}
+A propriedade falsa é a alternativa que não pode ser deduzida a partir das leis
+fundamentais da álgebra booleana. A alternativa 2
+
+\gabaritoex{7}
+A forma canônica correta é:
+\[
+Q=\overline{A}\,\overline{B}+AB
+\]
+
+\gabaritoex{8}
+A expressão simplificada corresponde a:
+\space
+
+PoS:
+\[
+Q = (A + B + \overline{C})
+    (A + \overline{B} + C)
+    (\overline{A} + B + \overline{C})
+    (\overline{A} + \overline{B} + C)
+\]
+
+SoP:
+\[
+Q = \overline{A}\,\overline{B}\,\overline{C}
+  + \overline{A} B C
+  + A \overline{B}\,\overline{C}
+  + A B C
+\]
+\[Q = 
+BC((\overline{A} + A) + \overline{BC}(\overline{A} + A)\]
+\[Q = BC + \overline{BC}\]
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{fotos/circuito1.png}
+    \label{fig:placeholder}
+\end{figure}
+
+\gabaritoex{9}
+4 combinações já que duas são iguais
+
+\gabaritoex{10}
+A principal característica da forma canônica SoP é permitir a implementação do
+circuito utilizando apenas portas AND, OR e inversores.
+
+\gabaritoex{11}
+\[1.\overline{BC} + B\overline{C} + \overline{A}BC\]
+\[2.\overline{C}(\overline{B}+B) + \overline{A}BC\]
+\[3.\overline{C} + \overline{A}BC\]
+
+\gabaritoex{12}
+Mapa 1: \[B+A\]
+Mapa 2: \[A\overline{B} + \overline{B}C + \overline{A}B\]
+Mapa 3: \[\overline{BCD} +A\overline{BC} + BC\overline{D}\]
+Mapa 4: \[A + C\overline{D} + \overline{BD}\]
+
+\gabaritoex{13}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{fotos/mapa2.png}
+\end{figure}
+
+\[
+Q = \overline{A} + \overline{B} + \overline{C} + \overline{D}
+\]
+
+
+\gabaritoex{14}
+\[
+\begin{array}{c c c|c}
+A & B & C & Q \\ \hline
+0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 1 & 1 & 1 \\
+1 & 0 & 0 & 0 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 1
+\end{array}
+\]
+
+\[
+Q = \overline{A}BC + A\overline{B}C + ABC
+\]
+
+\[
+Q = BC(\overline{A} + A) + A\overline{B}C
+\]
+\[
+Q = BC + A\overline{B}C
+\]
+
+
+\newpage

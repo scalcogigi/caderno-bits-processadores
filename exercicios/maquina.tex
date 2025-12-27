@@ -1,0 +1,171 @@
+\section{Linguagem de Máquina}
+\setcounter{exercicio}{0}
+
+
+\subsection{Conjunto de Instruções}
+
+\exercicio{Classificação de comandos quanto ao suporte do hardware}
+
+Classifique os comandos a seguir como \textbf{Suportado} ou
+\textbf{Não suportado} pelo hardware Z01.1:
+
+\begin{itemize}
+  \item \texttt{leaw \$423, \%A}
+  \item \texttt{leaw \$1, \%D}
+  \item \texttt{movw \$-1, (\%A)}
+  \item \texttt{leaw \$-15, \%A}
+  \item \texttt{movw (\%A), \%A, \%D}
+  \item \texttt{incw (\%A)}
+  \item \texttt{addw (\%A), \%D, (\%A)}
+  \item \texttt{jle \%A}
+  \item \texttt{movw \$2, \%D}
+  \item \texttt{movw \$1, \%D, \%A}
+  \item \texttt{addw (\%A), \%D, \%D, \%A}
+  \item \texttt{movw \%D, \%S}
+\end{itemize}
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+
+\exercicio{Classificação de comandos em A ou C}
+
+Classifique os comandos a seguir como instrução do tipo A ou do tipo C:
+
+\begin{itemize}
+  \item \texttt{leaw \$1, \%A}
+  \item \texttt{movw \%D, \%A}
+  \item \texttt{incw \%A}
+  \item \texttt{jmp}
+\end{itemize}
+
+\newpage
+
+\exercicio{Tradução da instrução \texttt{leaw}}
+
+A instrução:
+\[
+\texttt{leaw \$5, \%A}
+\]
+é traduzida para qual palavra em binário?
+
+\begin{itemize}
+  \item \texttt{000000000000000000}
+  \item \texttt{100000000000000101}
+  \item \texttt{000000000000000101}
+  \item \texttt{010101010101010101}
+\end{itemize}
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+
+\exercicio{Tradução da instrução \texttt{movw}}
+
+A instrução:
+\[
+\texttt{movw \%D, \%A}
+\]
+é traduzida para qual palavra em binário?
+
+\begin{itemize}
+  \item \texttt{1 000 1 001100 0 001 000}
+  \item \texttt{1 000 0 001100 0 001 000}
+  \item \texttt{0 000 1 001100 0 001 000}
+  \item \texttt{1 000 0 000000 0 000 011}
+\end{itemize}
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+
+\exercicio{Tradução da instrução \texttt{andw}}
+
+A instrução:
+\[
+\texttt{andw \%A, \%D, \%D}
+\]
+é traduzida para qual palavra em binário?
+
+\begin{itemize}
+  \item \texttt{1 000 0 000000 0 010 000}
+  \item \texttt{1 000 1 000000 0 010 000}
+  \item \texttt{1 000 0 000000 0 001 000}
+  \item \texttt{0 000 0 000000 0 010 001}
+\end{itemize}
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+
+\exercicio{Tradução da instrução \texttt{andw} com dois destinos}
+
+A instrução:
+\[
+\texttt{andw \%A, \%D, \%D, \%A}
+\]
+é traduzida para qual palavra em binário?
+
+\begin{itemize}
+  \item \texttt{1 000 0 000000 0 010 000}
+  \item \texttt{1 000 0 000000 0 011 000}
+  \item \texttt{1 000 0 000000 0 001 000}
+  \item \texttt{0 000 0 000000 0 010 001}
+\end{itemize}
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+
+\exercicio{Tradução da instrução \texttt{jmp}}
+
+A instrução \texttt{jmp} é traduzida para qual palavra em binário?
+
+\begin{itemize}
+  \item \texttt{1 000 0 XXXXXX 0 000 111}
+  \item \texttt{1 000 0 XXXXXX 0 001 000}
+  \item \texttt{0 000 0 XXXXXX 0 000 111}
+  \item \texttt{1 000 0 XXXXXX 0 000 000}
+\end{itemize}
+
+\espacoresposta{3cm}
+
+% --------------------------------------------------
+
+\exercicio{Interpretação de código em linguagem de máquina}
+
+O código a seguir está em linguagem de máquina do processador Z01. Considere que, neste hardware:
+\begin{itemize}
+  \item o endereço \texttt{RAM[16384]} corresponde às chaves de entrada (\texttt{SW});
+  \item o endereço \texttt{RAM[16385]} corresponde aos LEDs de saída.
+\end{itemize}
+
+O que o código abaixo faz?
+
+\begin{center}
+\ttfamily
+\begin{tabular}{l}
+000101001011000001 \\
+100011100000010000 \\
+000101001011000000 \\
+100000011000100000 \\
+000000000000000000 \\
+100000011000000111 \\
+100001010100000000
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+  \item Move o valor da \texttt{RAM[3]} para \texttt{RAM[2]} deixando-o negativo
+  \item Escreve um pixel no LCD
+  \item Copia o valor das chaves \texttt{SW} para os LEDs
+  \item Adiciona o valor de \texttt{RAM[1]} com \texttt{RAM[2]}
+\end{enumerate}
+
+\textit{Comentário:} este exercício explora o conceito de periféricos
+mapeados em memória, em que dispositivos de entrada e saída compartilham
+o mesmo espaço de endereçamento da RAM.
+
+
+\espacoresposta{2cm}
+
