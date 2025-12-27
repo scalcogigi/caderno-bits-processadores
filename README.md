@@ -1,6 +1,6 @@
 # Caderno de Exercícios — Bits e Processadores
 
-Este repositório contém um caderno de exercícios desenvolvido ao longo da disciplina **Bits e Processadores**, com foco em compreensão conceitual de sistemas digitais, arquitetura de computadores e linguagem de máquina.
+Este repositório contém um caderno de exercícios desenvolvido para a disciplina Bits e Processadores, com foco em compreensão conceitual de sistemas digitais, arquitetura de computadores e linguagem de máquina.
 
 ## Conteúdo
 - Álgebra Booleana
